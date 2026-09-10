@@ -1,0 +1,42 @@
+[package]
+name = "ai-api"
+version = "0.1.0"
+edition = "2021"
+description = "HTTP API adapter for AI Flow Runtime"
+
+[dependencies]
+ai-flow-runtime = { path = "../ai-flow-runtime" }
+ai-flow-engine = { path = "../ai-flow-engine" }
+ai-prompts = { path = "../ai-prompts" }
+ai-evals = { path = "../ai-evals" }
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1", features = ["full"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["trace", "timeout", "compression-full", "request-id", "cors"] }
+utoipa = { version = "5", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "9", features = ["axum"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+thiserror = "1"
+dotenvy = "0.15"
+chrono = { version = "0.4", features = ["serde"] }
+
+[features]
+default = []
+gemini = ["ai-flow-runtime/gemini"]
+
+[[bin]]
+name = "ai-api"
+path = "src/main.rs"
+
+[dev-dependencies]
+reqwest = { version = "0.12", features = ["json"] }
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+hyper = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde_json = "1"

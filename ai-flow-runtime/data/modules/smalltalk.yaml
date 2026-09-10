@@ -1,0 +1,7 @@
+sections:
+  greetings:
+    description: "Приветствия"
+    content: "Добрый день. Чем могу помочь?"
+  fillers:
+    description: "Заполнители"
+    content: "Понял вас. Одну секунду."

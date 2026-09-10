@@ -1,0 +1,26 @@
+name: flow_resume
+domain: regression
+llm: mock
+
+flow: payment
+client: sample_client
+
+modules:
+  company: acme
+
+setup:
+  - transition: confirm
+
+user_message: "Click оплата"
+
+steps:
+  - action: close_module
+
+expected:
+  flow:
+    runtime_state: Flow
+    current_node: payment
+
+  router:
+    type: module
+    module: company

@@ -1,0 +1,39 @@
+{
+  "id": "payment_flow",
+  "name": "Payment Reminder",
+  "version": 1,
+  "initial": "greeting",
+  "nodes": [
+    {
+      "id": "greeting",
+      "node_type": "flow",
+      "payload": {
+        "task": "Greeting"
+      },
+      "transitions": [
+        {
+          "action": "confirm",
+          "target": "end"
+        },
+        {
+          "action": "wrong_person",
+          "target": "end"
+        }
+      ],
+      "position": {
+        "x": 120.0,
+        "y": 80.0
+      }
+    },
+    {
+      "id": "end",
+      "node_type": "end",
+      "payload": {},
+      "transitions": [],
+      "position": {
+        "x": 120.0,
+        "y": 220.0
+      }
+    }
+  ]
+}

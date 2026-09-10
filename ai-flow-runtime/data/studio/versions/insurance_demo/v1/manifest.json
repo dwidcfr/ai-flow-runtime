@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "published_at": "2026-09-10T03:34:54.843981525+00:00",
+  "project_id": "insurance_demo",
+  "files": [
+    "registry.yaml",
+    "payment_flow.yaml",
+    "knowledge.yaml"
+  ]
+}

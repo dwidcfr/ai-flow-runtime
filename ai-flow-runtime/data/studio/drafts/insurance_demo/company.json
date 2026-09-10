@@ -1,0 +1,10 @@
+{
+  "id": "insurance_demo",
+  "name": "Insurance Demo Renamed",
+  "description": null,
+  "prompt_set": "demo",
+  "knowledge_source": "company/acme.yaml",
+  "flows": [
+    "payment_flow"
+  ]
+}

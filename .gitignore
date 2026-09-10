@@ -1,0 +1,21 @@
+/target/
+.env
+.env.local
+.tmp/
+
+# Node / frontend
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+**/playwright-report/
+**/test-results/
+
+# Logs
+*.log
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store

@@ -1,0 +1,28 @@
+name: greeting_confirm
+domain: payment
+llm: mock
+
+flow: payment
+client: sample_client
+
+user_message: "да, это я"
+
+expected:
+  router:
+    type: flow
+    action: confirm
+
+  response:
+    non_empty: true
+    finish_conversation: false
+
+  flow:
+    current_node: payment
+    runtime_state: Flow
+
+  session:
+    user_message_recorded: true
+    assistant_message_recorded: true
+    history_min_len: 2
+
+  finish_conversation: false

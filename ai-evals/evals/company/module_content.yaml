@@ -1,0 +1,27 @@
+name: module_content
+domain: company
+llm: mock
+
+flow: payment
+client: sample_client
+
+modules:
+  company: acme
+
+setup:
+  - transition: confirm
+
+user_message: "Click оплата"
+
+expected:
+  router:
+    type: module
+    module: company
+    section: payment_methods
+
+  flow:
+    runtime_state: Module
+    paused_node: payment
+
+  response:
+    non_empty: true

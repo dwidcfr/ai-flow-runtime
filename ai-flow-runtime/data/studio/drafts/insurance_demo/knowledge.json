@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": "faq",
+      "name": "faq"
+    },
+    {
+      "id": "payment",
+      "name": "payment"
+    }
+  ],
+  "documents": [
+    {
+      "id": "payment_methods",
+      "category_id": "payment",
+      "title": "Способы оплаты",
+      "section": "payment_methods",
+      "content": "Оплата доступна через Click, Payme, Paynet.\nClick: номер +998 90 123 45 67\n",
+      "metadata": {}
+    },
+    {
+      "id": "faq_late_payment",
+      "category_id": "faq",
+      "title": "Последствия просрочки",
+      "section": "faq_late_payment",
+      "content": "При просрочке более 30 дней начисляется пеня.\n",
+      "metadata": {}
+    },
+    {
+      "id": "faq_test_studio",
+      "category_id": "faq",
+      "title": "Studio FAQ",
+      "section": "faq_test_studio",
+      "content": "Оплата картой доступна в мобильном приложении Acme Insurance.",
+      "metadata": {
+        "tags": [
+          "test"
+        ]
+      }
+    }
+  ]
+}

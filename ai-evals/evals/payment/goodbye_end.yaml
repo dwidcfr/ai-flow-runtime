@@ -1,0 +1,21 @@
+name: goodbye_end
+domain: payment
+llm: mock
+
+flow: payment
+client: sample_client
+
+user_message: "до свидания"
+
+expected:
+  router:
+    type: end
+
+  response:
+    non_empty: true
+    finish_conversation: true
+
+  flow:
+    finished: true
+
+  finish_conversation: true

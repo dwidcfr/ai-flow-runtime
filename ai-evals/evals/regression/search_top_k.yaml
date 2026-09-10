@@ -1,0 +1,26 @@
+name: search_top_k
+domain: regression
+llm: mock
+
+flow: payment
+client: sample_client
+
+modules:
+  company: acme
+
+setup:
+  - transition: confirm
+
+user_message: "Click payment"
+
+expected:
+  search:
+    query: "Click payment"
+    top_k: 3
+    expect:
+      module: company
+      section: payment_methods
+
+  router:
+    type: module
+    module: company

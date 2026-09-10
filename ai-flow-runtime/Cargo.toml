@@ -1,0 +1,31 @@
+[package]
+name = "ai-flow-runtime"
+version = "0.1.0"
+edition = "2021"
+description = "Rule-based runtime engine for AI Flow platform"
+
+[dependencies]
+ai-flow-engine = { path = "../ai-flow-engine" }
+ai-search-engine = { path = "../ai-search-engine" }
+ai-router-engine = { path = "../ai-router-engine" }
+ai-response-engine = { path = "../ai-response-engine" }
+ai-prompts = { path = "../ai-prompts" }
+ai-gemini = { path = "../ai-gemini", optional = true }
+dotenvy = { version = "0.15", optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+thiserror = "1"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+[features]
+default = []
+gemini = ["dep:ai-gemini", "dep:dotenvy"]
+
+[[example]]
+name = "gemini_flow"
+required-features = ["gemini"]
+
+[dev-dependencies]
+tempfile = "3"

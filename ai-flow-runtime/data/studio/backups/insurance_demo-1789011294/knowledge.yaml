@@ -1,0 +1,16 @@
+sections:
+  payment_methods:
+    description: Способы оплаты
+    content: |
+      Оплата доступна через Click, Payme, Paynet.
+      Click: номер +998 90 123 45 67
+  faq_late_payment:
+    description: Последствия просрочки
+    content: |
+      При просрочке более 30 дней начисляется пеня.
+  faq_test_studio:
+    description: Studio FAQ
+    content: Оплата картой доступна в мобильном приложении Acme Insurance.
+    metadata:
+      tags:
+      - test

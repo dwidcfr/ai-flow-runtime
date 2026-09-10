@@ -1,0 +1,23 @@
+name: payment_methods_gemini
+domain: payment
+llm: gemini
+
+flow: payment
+client: sample_client
+
+modules:
+  company: acme
+
+setup:
+  - transition: confirm
+
+user_message: "Как оплатить через Click?"
+
+expected:
+  response:
+    non_empty: true
+    finish_conversation: false
+
+  session:
+    user_message_recorded: true
+    assistant_message_recorded: true

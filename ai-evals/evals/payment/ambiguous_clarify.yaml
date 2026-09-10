@@ -1,0 +1,24 @@
+name: ambiguous_clarify
+domain: payment
+llm: mock
+
+flow: payment
+client: sample_client
+
+user_message: "хмм"
+
+expected:
+  router:
+    type: clarify
+
+  response:
+    non_empty: true
+    contains:
+      - уточнить
+    finish_conversation: false
+
+  flow:
+    current_node: greeting
+    runtime_state: Flow
+
+  finish_conversation: false

@@ -1,0 +1,16 @@
+name: collection_placeholder
+domain: collection
+llm: mock
+
+flow: payment
+client: sample_client
+
+user_message: "да, это я"
+
+expected:
+  router:
+    type: flow
+    action: confirm
+
+  response:
+    non_empty: true

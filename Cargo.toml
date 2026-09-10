@@ -1,0 +1,3 @@
+[workspace]
+members = ["ai-api", "ai-flow-engine", "ai-flow-runtime", "ai-evals", "ai-gemini", "ai-prompts", "ai-search-engine", "ai-router-engine", "ai-response-engine"]
+resolver = "2"

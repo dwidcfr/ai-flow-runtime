@@ -1,0 +1,18 @@
+name: session_history
+domain: regression
+llm: mock
+
+flow: payment
+client: sample_client
+
+user_message: "да, это я"
+
+expected:
+  session:
+    user_message_recorded: true
+    assistant_message_recorded: true
+    history_min_len: 2
+
+  router:
+    type: flow
+    action: confirm

@@ -1,0 +1,50 @@
+name: payment_methods
+domain: payment
+llm: mock
+
+flow: payment
+client: sample_client
+
+modules:
+  company: acme
+
+setup:
+  - transition: confirm
+
+conversation:
+  - role: assistant
+    text: Здравствуйте.
+
+user_message: "Click оплата"
+
+expected:
+  router:
+    type: module
+    module: company
+    section: payment_methods
+
+  response:
+    contains:
+      - Click
+      - Payme
+      - Paynet
+    non_empty: true
+    finish_conversation: false
+
+  flow:
+    runtime_state: Module
+    paused_node: payment
+
+  search:
+    query: "Click оплата"
+    top_k: 3
+    expect:
+      module: company
+      section: payment_methods
+
+  session:
+    user_message_recorded: true
+    assistant_message_recorded: true
+    history_min_len: 2
+
+  finish_conversation: false

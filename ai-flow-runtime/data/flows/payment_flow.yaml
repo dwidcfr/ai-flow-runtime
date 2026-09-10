@@ -1,0 +1,24 @@
+id: payment_flow
+name: Payment Reminder
+version: 1
+initial: greeting
+nodes:
+  end:
+    type: end
+  greeting:
+    type: flow
+    task: Greeting
+    transitions:
+      confirm: payment
+      wrong_person: wrong_person
+  payment:
+    type: flow
+    task: Payment Reminder
+    transitions:
+      paid: end
+      question: payment
+  wrong_person:
+    type: flow
+    task: Wrong Person
+    transitions:
+      finish: end

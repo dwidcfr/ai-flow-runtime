@@ -1,0 +1,28 @@
+[package]
+name = "ai-evals"
+version = "0.1.0"
+edition = "2021"
+description = "Evaluation harness for AI Flow platform"
+
+[[bin]]
+name = "ai-evals"
+path = "src/main.rs"
+
+[dependencies]
+ai-flow-runtime = { path = "../ai-flow-runtime" }
+ai-router-engine = { path = "../ai-router-engine" }
+clap = { version = "4", features = ["derive"] }
+dotenvy = { version = "0.15", optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+thiserror = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[features]
+default = []
+gemini = ["ai-flow-runtime/gemini", "dep:dotenvy"]
+
+[dev-dependencies]
+tempfile = "3"

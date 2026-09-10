@@ -1,0 +1,9 @@
+flows:
+  payment: ../ai-flow-runtime/data/flows/payment_flow.yaml
+
+clients:
+  sample_client: ../ai-flow-runtime/data/clients/sample.json
+
+modules:
+  acme: ../ai-flow-runtime/data/company/acme.yaml
+  smalltalk: ../ai-flow-runtime/data/modules/smalltalk.yaml
